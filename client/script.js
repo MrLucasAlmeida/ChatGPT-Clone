@@ -9,7 +9,7 @@ let loadInterval;
 function loader(element) {
   element.textContent = '';
 
-  setInterval(() => {
+  loadInterval = setInterval(() => {
     element.textContent += '.';
 
     if (element.textContent === '....') {
@@ -20,10 +20,11 @@ function loader(element) {
 
 function typeText(element, text) {
   let index = 0;
-
+  const parentContainer = document.querySelector('#chat_container');
   let interval = setInterval(() => {
     if (index < text.length) {
-      element.textContent += text[index];
+      element.textContent += text.charAt(index);
+      parentContainer.scrollTop = parentContainer.scrollHeight;
       index++;
     } else {
       clearInterval(interval);
@@ -79,7 +80,32 @@ const handleSubmit = async (e) => {
 
   loader(messageDiv);
 
+  // fetches AI response from server
+  const response = await fetch('http://localhost:5000', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      prompt: data.get('prompt')
+    })
+  });
 
+  clearInterval(loadInterval);
+  messageDiv.innerHTML = '';
+
+  if (response.ok) {
+    const data = await response.json();
+    const parsedData = data.bot.trim();
+
+
+    typeText(messageDiv, parsedData);
+  } else {
+    const err = response.text();
+
+    messageDiv.textContent = "Something went wrong.";
+    alert(err);
+  }
 }
 
 
