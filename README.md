@@ -1,6 +1,5 @@
 ### ChatGPT Clone
-Created a chat app that makes calls to Text Davinci 003 using [OpenAI Api](https://openai.com/api/). Check out my project at [ChatGPT Clone](https://chat-gpt-clone-self.vercel.app/).\
-[Server](https://chatgpt-clone-13gm.onrender.com)
+Created a chat app that makes calls to Text Davinci 003 using [OpenAI Api](https://openai.com/api/). Check out my project at [ChatGPT Clone](https://chat-gpt-clone-self.vercel.app/).
 
 ### Prompt Ideas
 Ask it to explain something complicated.\
