@@ -2,8 +2,8 @@ import bot from './assets/bot.svg';
 import user from './assets/user.svg';
 
 
-// const URL = 'https://backend.mrlucasalmeida.com:5001';
-const URL = 'https://localhost:5001';
+const URL = 'https://backend.mrlucasalmeida.com:5001';
+// const URL = 'https://localhost:5001';
 
 const form = document.querySelector('form');
 const chatContainer = document.querySelector('#chat_container');
