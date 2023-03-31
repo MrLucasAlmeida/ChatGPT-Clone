@@ -2,6 +2,11 @@ import express from 'express';
 import * as dotenv from 'dotenv';
 import cors from 'cors';
 import { Configuration, OpenAIApi } from 'openai';
+import fs from 'fs';
+import https from 'https';
+
+const port = 5001;
+
 
 dotenv.config();
 
@@ -46,4 +51,13 @@ app.post('/', async (req,res) => {
     }
 });
 
-app.listen(5000, () => console.log("Server is listening on port http://localhost:5000"));
+
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/backend.mrlucasalmeida.com/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/backend.mrlucasalmeida.com/fullchain.pem', 'utf8');
+const credentials = { key: privateKey, cert: certificate };
+
+const httpsServer = https.createServer(credentials, app);
+
+httpsServer.listen(port, () => {
+  console.log(`Backend server listening at https://localhost:${port}`);
+});
