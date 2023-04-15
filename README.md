@@ -1,5 +1,5 @@
 ### ChatGPT Clone
-Created a chat app that makes calls to Text Davinci 003 using [OpenAI Api](https://openai.com/api/). For your first prompt, it might take a good 10 seconds. Check out my project [HERE](https://chat-gpt-clone-mrlucasalmeida.vercel.app/)).
+Created a chat app that makes calls to Text Davinci 003 using [OpenAI Api](https://openai.com/api/). Check out my project [HERE](https://chat-gpt-clone-mrlucasalmeida.vercel.app/)).
 
 ### Prompt Ideas
 Ask it to explain something complicated.\
