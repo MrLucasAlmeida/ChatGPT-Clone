@@ -22,6 +22,7 @@ function loader(element) {
   }, 300);
 }
 
+// display text to user character by character
 function typeText(element, text) {
   let index = 0;
   const parentContainer = document.querySelector('#chat_container');
@@ -36,7 +37,7 @@ function typeText(element, text) {
   }, 20);
 }
 
-
+// generate unique id for each of the messages
 function generateUniqueId() {
   const timeStamp =  Date.now();
   const randomNumber = Math.random();
@@ -45,6 +46,7 @@ function generateUniqueId() {
   return `id-${timeStamp}-${hexadecimalString}`;
 }
 
+// chat stripe template that can be for both the AI messages and the user messages
 function chatStripe(isAi, value, uniqueId) {
   return (
     `
@@ -82,6 +84,7 @@ const handleSubmit = async (e) => {
 
   const messageDiv = document.getElementById(uniqueId);
 
+  // start the loading animation
   loader(messageDiv);
 
   // fetches AI response from server
@@ -105,6 +108,7 @@ const handleSubmit = async (e) => {
 
     typeText(messageDiv, parsedData);
   } else {
+    // error message if something goes wrong
     const err = response.text();
 
     messageDiv.textContent = "Something went wrong.";
@@ -113,6 +117,7 @@ const handleSubmit = async (e) => {
 }
 
 
+// event listeners for both enter and the submit icon
 form.addEventListener('submit', handleSubmit);
 form.addEventListener('keyup', (e) => {
   if (e.keyCode === 13) {
