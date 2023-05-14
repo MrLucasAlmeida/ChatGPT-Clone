@@ -1,5 +1,5 @@
 ### ChatGPT Clone
-Created a chat app that makes calls to Text Davinci 003 using [OpenAI Api](https://openai.com/api/). For your first prompt, it might take a good 10 seconds. Check out my project [here](https://chat-gpt-clone-self.vercel.app/).
+Created a chat app that makes calls to Text Davinci 003 using [OpenAI Api](https://openai.com/api/). Check out my project [HERE](https://chat-gpt-clone-mrlucasalmeida.vercel.app/)).
 
 ### Prompt Ideas
 Ask it to explain something complicated.\
@@ -12,11 +12,12 @@ What are wormholes. Explain like I am 5.\
 Give me party ideas for a birthday of a 29 year old.
 
 ### Hosting
-Used Vercel for client side and Render for server side hosting.\
+Used Vercel for client side and Digital Ocean for server side hosting.\
 [Vercel](https://vercel.com)\
-[Render](https://render.com/)
+[DigitalOcean](https://www.digitalocean.com/)
 
 ### What I Learned
 * How to create a chat style front end.
 * How to fetch responses using OpenAI Api.
-* How to host both the client side and server side.
+* Host both the client side and server side.
+* Setup Https on a Ubuntu server.
